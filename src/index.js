@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-const Component = () => <h1>Hello World</h1>;
+import FlashcardApp from './FlashcardApp';
 
 const wrapper = document.getElementById('minigame');
-ReactDOM.render(<Component />, wrapper);
+ReactDOM.render(<FlashcardApp />, wrapper);
