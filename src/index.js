@@ -1,7 +1,7 @@
-function component() {
-    let element = document.createElement('div');
-    element.innerHTML = 'Hello, World';
-    return element;
-}
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-document.body.appendChild(component());
+const Component = () => <h1>Hello World</h1>;
+
+const wrapper = document.getElementById('minigame');
+ReactDOM.render(<Component />, wrapper);
