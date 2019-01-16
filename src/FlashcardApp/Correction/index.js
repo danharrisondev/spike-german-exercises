@@ -1,11 +1,22 @@
 import React from 'react';
+import styled from 'styled-components';
 import {string, func} from 'prop-types';
 
+const Centered = styled.div`
+    text-align: center;
+`;
+
+const Button = styled.button`
+    padding: 10px 20px;
+`;
+
 const Correction = ({question, answer, onContinue}) => (
-    <div className="correction">
+    <div>
         <h3>Wrong!</h3>
         <p>The correct answer to the question '{question}' is <strong>'{answer}'</strong>.</p>
-        <button onClick={onContinue}>Ups!</button>
+        <Centered>
+            <Button onClick={onContinue}>Ups!</Button>
+        </Centered>
     </div>
 );
 
