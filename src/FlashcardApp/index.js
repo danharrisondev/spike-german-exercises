@@ -59,12 +59,12 @@ class FlashcardApp extends React.Component {
     render() {
         const {begun, cards, showingCorrection} = this.state;
         return (
-            <div className="minigame">
+            <React.Fragment>
                 {begun && !showingCorrection && cards.length > 0 && <Card {...cards[0]} success={this.success} fail={this.fail} />}
                 {begun && !showingCorrection && cards.length === 0 && <Finished onRestart={this.restart} />}
                 {!begun && !showingCorrection && <Instructions begin={this.begin} />}
                 {begun && showingCorrection && <Correction {...cards[0]} onContinue={this.moveCurrentCardToEnd} />}
-            </div>
+            </React.Fragment>
         );
     }
 }
