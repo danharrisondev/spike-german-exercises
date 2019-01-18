@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FlashcardApp from './FlashcardApp';
+import SelectTheArticleGame from './SelectTheArticle';
 
 window.flashcards = {
-    startArticlesGame: (selector) => {
+    startSelectTheArticleGame: (selector) => {
         const wrapper = document.querySelector(selector);
-        ReactDOM.render(<FlashcardApp />, wrapper);
+        ReactDOM.render(<SelectTheArticleGame />, wrapper);
     }
 };
