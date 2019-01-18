@@ -7,9 +7,15 @@
 </head>
 <body>
 
-    <div id="game"></div>
+    <h2>Select the article</h2>
+    <div id="selectTheArticleGame"></div>
+    <h2>Select the gender</h2>
+    <div id="selectTheGenderGame"></div>
     <script src="./dist/main.js"></script>
-    <script>window.flashcards.startSelectTheArticleGame('#game');</script>
+    <script>
+        window.flashcards.startSelectTheArticleGame('#selectTheArticleGame');
+        window.flashcards.startSelectTheGenderGame('#selectTheGenderGame');
+    </script>
 
 </body>
 </html>

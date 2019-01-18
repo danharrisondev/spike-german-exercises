@@ -4,7 +4,7 @@ import Instructions from './Instructions';
 import Card from '../Card';
 import Correction from '../Correction';
 import Finished from '../Finished';
-import ArticleCards from './Data';
+import GenderCards from './Data';
 
 class FlashcardApp extends React.Component {
     constructor(props) {
@@ -12,7 +12,7 @@ class FlashcardApp extends React.Component {
         this.state = {
             begun: false,
             showingCorrection: false,
-            cards: shuffle(ArticleCards.slice(0))
+            cards: shuffle(GenderCards.slice(0))
         };
 
         this.begin = this.begin.bind(this);
@@ -52,7 +52,7 @@ class FlashcardApp extends React.Component {
         this.setState({
             begun: false,
             showingCorrection: false,
-            cards: shuffle(ArticleCards.slice(0))
+            cards: shuffle(GenderCards.slice(0))
         });
     }
 
