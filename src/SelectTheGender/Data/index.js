@@ -1,15 +1,21 @@
 const Masculine = 'masculine';
 const Feminine = 'feminine';
 const Neuter = 'neuter';
+const Plural = 'plural';
 
-const Genders = [Masculine, Feminine, Neuter];
+function create(question, answer) {
+    return {
+        question,
+        answer,
+        options: [Masculine, Feminine, Neuter, Plural]
+    };
+}
 
-const GenderCards = [
-    {
-        question: 'What is the gender for the noun Frau?',
-        answer: Feminine,
-        options: Genders
-    }
+const Questions = [
+    create('Mann', Masculine),
+    create('Frau', Feminine),
+    create('Mädchen', Neuter),
+    create('Junge', Masculine),
 ];
 
-export default GenderCards;
+export default Questions;

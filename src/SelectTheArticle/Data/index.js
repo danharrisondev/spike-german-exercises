@@ -5,89 +5,31 @@ const Den = 'den';
 const Dem = 'dem';
 const Des = 'des';
 
-const DefiniteArticles = [Der, Die, Das, Den, Dem, Des];
-
-const ArticleCards = [
-    {
-        question: 'What is the nominative masculine article?',
-        answer: Der,
-        options: DefiniteArticles
-    },
-    {
-        question: 'What is the nominative feminine article?',
-        answer: Die,
-        options: DefiniteArticles
-    },
-    {
-        question: 'What is the nominative neuter article?',
-        answer: Das,
-        options: DefiniteArticles
-    },
-    {
-        question: 'What is the nominative plural article?',
-        answer: Die,
-        options: DefiniteArticles
-    },
-    {
-        question: 'What is the accusative masculine article?',
-        answer: Den,
-        options: DefiniteArticles
-    },
-    {
-        question: 'What is the accusative feminine article?',
-        answer: Die,
-        options: DefiniteArticles
-    },
-    {
-        question: 'What is the accusative neuter article?',
-        answer: Das,
-        options: DefiniteArticles
-    },
-    {
-        question: 'What is the accusative plural article?',
-        answer: Die,
-        options: DefiniteArticles
-    },
-    {
-        question: 'What is the dative masculine article?',
-        answer: Dem,
-        options: DefiniteArticles
-    },
-    {
-        question: 'What is the dative feminine article?',
-        answer: Der,
-        options: DefiniteArticles
-    },
-    {
-        question: 'What is the dative neuter article?',
-        answer: Dem,
-        options: DefiniteArticles
-    },
-    {
-        question: 'What is the dative plural article?',
-        answer: Den,
-        options: DefiniteArticles
-    },
-    {
-        question: 'What is the genitive masculine article?',
-        answer: Des,
-        options: DefiniteArticles
-    },
-    {
-        question: 'What is the genitive feminine article?',
-        answer: Der,
-        options: DefiniteArticles
-    },
-    {
-        question: 'What is the genitive neuter article?',
-        answer: Des,
-        options: DefiniteArticles
-    },
-    {
-        question: 'What is the genetive plural article?',
-        answer: Der,
-        options: DefiniteArticles
+function create(question, answer) {
+    return {
+        question,
+        answer,
+        options: [Der, Die, Das, Den, Dem, Des]
     }
+}
+
+const Questions = [
+    create('What is the nominative masculine article?', Der),
+    create('What is the nominative feminine article?', Die),
+    create('What is the nominative neuter article?', Das),
+    create('What is the nominative plural article?', Die),
+    create('What is the accusative masculine article?', Den),
+    create('What is the accusative feminine article?', Die),
+    create('What is the accusative neuter article?', Das),
+    create('What is the accusative plural article?', Die),
+    create('What is the dative masculine article?', Dem),
+    create('What is the dative feminine article?', Der),
+    create('What is the dative neuter article?', Dem),
+    create('What is the dative plural article?', Den),
+    create('What is the genitive masculine article?', Des),
+    create('What is the genitive feminine article?', Der),
+    create('What is the genitive neuter article?', Des),
+    create('What is the genetive plural article?', Der),
 ];
 
-export default ArticleCards;
+export default Questions;
