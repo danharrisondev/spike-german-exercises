@@ -1,7 +1,7 @@
-const Masculine = 'masculine';
-const Feminine = 'feminine';
-const Neuter = 'neuter';
-const Plural = 'plural';
+const Masculine = 'der';
+const Feminine = 'die';
+const Neuter = 'das';
+const Plural = 'die';
 
 function create(question, answer) {
     return {
