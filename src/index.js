@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SelectTheArticleGame from './SelectTheArticle';
-import SelectTheGenderGame from './SelectTheGender';
-import CompleteTheAdjectiveGame from './CompleteTheAdjective';
+import SelectTheArticleGame from './MultipleChoice/SelectTheArticle';
+import SelectTheGenderGame from './MultipleChoice/SelectTheGender';
+import CompleteTheAdjectiveGame from './MultipleChoice/CompleteTheAdjective';
 
 window.flashcards = {
     startSelectTheArticleGame: (selector) => {
