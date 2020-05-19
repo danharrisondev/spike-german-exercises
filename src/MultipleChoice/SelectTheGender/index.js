@@ -5,6 +5,11 @@ import Card from '../Card';
 import Correction from '../Correction';
 import Finished from '../Finished';
 import Questions from './Questions';
+import styled from 'styled-components';
+
+const GameContainer = styled.div`
+    font-family: Arial, Helvetica, sans-serif;
+`;
 
 class FlashcardApp extends React.Component {
     constructor(props) {
@@ -59,12 +64,13 @@ class FlashcardApp extends React.Component {
     render() {
         const {begun, cards, showingCorrection} = this.state;
         return (
-            <React.Fragment>
+            <GameContainer>
+                <h2>Select the gender</h2>
                 {begun && !showingCorrection && cards.length > 0 && <Card {...cards[0]} success={this.success} fail={this.fail} />}
                 {begun && !showingCorrection && cards.length === 0 && <Finished onRestart={this.restart} />}
                 {!begun && !showingCorrection && <Instructions begin={this.begin} />}
                 {begun && showingCorrection && <Correction {...cards[0]} onContinue={this.moveCurrentCardToEnd} />}
-            </React.Fragment>
+            </GameContainer>
         );
     }
 }
