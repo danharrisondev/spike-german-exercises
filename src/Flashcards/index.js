@@ -35,7 +35,7 @@ export default class Flashcards extends Component {
       cardIndex: 0,
       cards: [],
       card: null,
-      loading: false
+      loading: true
     };
   }
 
