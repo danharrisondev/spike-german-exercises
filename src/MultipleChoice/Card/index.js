@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {string, array, func} from 'prop-types';
+import Button from '../../Button';
 
 const Container = styled.div`
     border-radius: 5px;
@@ -9,25 +10,9 @@ const Container = styled.div`
     text-align: center;
 `;
 
-const Button = styled.button`
-    appearance: none;
-    margin: 0 5px;
-    padding: 10px 20px;
-    background: #4cb52a;
-    border: 1px solid #224d1f;
-    border-radius: 2px;
-    font-weight: bold;
-    color: #fff;
-    transition: background 0.3s;
-
-    &:hover {
-        background: #3d9421;
-    }
-`;
-
 const Card = ({question, answer, options, success, fail}) => (
     <Container>
-        <h3>{question}</h3>
+        <p>{question}</p>
         <div>
             {options.map(o => o === answer 
                 ? <Button key={o} onClick={success}>{o}</Button>

@@ -1,13 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import {func} from 'prop-types';
+import Button from '../../../Button';
 
 const Centered = styled.div`
     text-align: center;
-`;
-
-const Button = styled.button`
-    padding: 10px 20px;
 `;
 
 const Instructions = ({begin}) => (

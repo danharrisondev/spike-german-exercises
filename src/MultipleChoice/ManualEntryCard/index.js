@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { string, array, func } from 'prop-types';
+import Button from '../../Button';
 
 const Container = styled.div`
     border-radius: 5px;
@@ -9,8 +10,14 @@ const Container = styled.div`
     text-align: center;
 `;
 
-const Button = styled.button`
-    margin: 0 5px;
+const Input = styled.input`
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid #666;
+    border-radius: 2px;
+    margin-left: 0.7em;
+    margin-right: 0.7em;
     padding: 10px 20px;
 `;
 
@@ -60,11 +67,11 @@ class MultipleEntryCard extends React.Component {
     render() {
         return (
             <Container>
-                <h3>
+                <p>
                     {this.getLeadingPart()}
-                    <input type="text" onChange={this.handleTextChanged.bind(this)} value={this.state.text} />
+                    <Input type="text" onChange={this.handleTextChanged.bind(this)} value={this.state.text} />
                     {this.getTrailingPart()}
-                </h3>
+                </p>
                 <Button onClick={this.handleSubmit.bind(this)}>Submit</Button>
             </Container>
         );
