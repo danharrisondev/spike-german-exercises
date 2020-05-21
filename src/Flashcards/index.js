@@ -34,15 +34,18 @@ export default class Flashcards extends Component {
       answerRevealed: false,
       cardIndex: 0,
       cards: [],
-      loading: true
+      card: null,
+      loading: false
     };
+  }
 
+  componentDidMount() {
     fetch(this.props.source)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         this.setState({
           cards: data.cards,
+          card: data.cards.length > 0 ? data.cards[0] : null,
           loading: false
         });
       });
@@ -74,8 +77,13 @@ export default class Flashcards extends Component {
     return <p>Loading...</p>;
   }
 
-  renderFlashcards() {
+  renderEmpty() {
+    return <p>Card 0/0</p>;
+  }
+
+  renderCards() {
     const { card, cards, answerRevealed } = this.state;
+
     return (
       <React.Fragment>
         <p>
@@ -102,11 +110,20 @@ export default class Flashcards extends Component {
     );
   }
 
+  renderFlashcards() {
+    return (
+      <React.Fragment>
+        {this.state.cards.length === 0 && this.renderEmpty()}
+        {this.state.cards.length > 0 && this.renderCards()}
+      </React.Fragment>
+    );
+  }
+
   render() {
     return (
       <GameContainer>
-        {this.state.loading && this.renderLoader()}
-        {!this.state.loading && this.renderFlashcards()}
+        {this.state.loading === true && this.renderLoader()}
+        {this.state.loading === false && this.renderFlashcards()}
       </GameContainer>
     );
   }
