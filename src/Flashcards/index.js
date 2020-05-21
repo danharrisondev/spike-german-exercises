@@ -39,12 +39,13 @@ export default class Flashcards extends Component {
 
     fetch(this.props.source)
       .then(response => response.json())
-      .then(data =>
+      .then(data => {
+        console.log(data);
         this.setState({
           cards: data.cards,
           loading: false
-        })
-      );
+        });
+      });
   }
 
   next() {
