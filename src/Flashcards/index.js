@@ -27,45 +27,38 @@ const Content = styled.p`
   margin-top: 85px;
 `;
 
-const Cards = [
-  {
-    question: "Ich esse de_ Kuchen",
-    answer: "Ich esse den Kuchen"
-  },
-  {
-    question: "Ich habe ein gemütlich__ Wohnzimmer",
-    answer: "Ich habe ein gemütliches Wohnzimmer"
-  },
-  {
-    question: "Ich will ___ Eis essen",
-    answer: "Ich will ein Eis essen"
-  }
-];
-
 export default class Flashcards extends Component {
   constructor(props) {
     super(props);
     this.state = {
       answerRevealed: false,
       cardIndex: 0,
-      card: Cards[0]
+      cards: [],
+      loading: true
     };
+
+    fetch(this.props.source)
+      .then(response => response.json())
+      .then(data =>
+        this.setState({
+          cards: data,
+          loading: false
+        })
+      );
   }
 
   next() {
-    var cardIndex = this.state.cardIndex + 1;
     this.setState({
-      card: Cards[cardIndex],
-      cardIndex,
+      card: this.state.cards[this.state.cardIndex + 1],
+      cardIndex: this.state.cardIndex + 1,
       answerRevealed: false
     });
   }
 
   previous() {
-    var cardIndex = this.state.cardIndex - 1;
     this.setState({
-      card: Cards[cardIndex],
-      cardIndex,
+      card: this.state.cards[this.state.cardIndex - 1],
+      cardIndex: this.state.cardIndex - 1,
       answerRevealed: false
     });
   }
@@ -76,12 +69,16 @@ export default class Flashcards extends Component {
     });
   }
 
-  render() {
-    const { card, answerRevealed } = this.state;
+  renderLoader() {
+    return <p>Loading...</p>;
+  }
+
+  renderFlashcards() {
+    const { card, cards, answerRevealed } = this.state;
     return (
-      <GameContainer>
+      <React.Fragment>
         <p>
-          Card {this.state.cardIndex + 1}/{Cards.length}
+          Card {this.state.cardIndex + 1}/{cards.length}
         </p>
         <Card>
           {!answerRevealed && (
@@ -100,6 +97,15 @@ export default class Flashcards extends Component {
         <Button onClick={this.previous.bind(this)}>Previous</Button>
         <Button onClick={this.reveal.bind(this)}>Reveal Answer</Button>
         <Button onClick={this.next.bind(this)}>Next</Button>
+      </React.Fragment>
+    );
+  }
+
+  render() {
+    return (
+      <GameContainer>
+        {this.state.loading && this.renderLoader()}
+        {!this.state.loading && this.renderFlashcards()}
       </GameContainer>
     );
   }

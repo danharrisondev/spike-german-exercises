@@ -1,0 +1,16 @@
+{
+  "cards": [
+    {
+      "question": "Ich esse de_ Kuchen",
+      "answer": "Ich esse den Kuchen"
+    },
+    {
+      "question": "Ich habe ein gemütlich__ Wohnzimmer",
+      "answer": "Ich habe ein gemütliches Wohnzimmer"
+    },
+    {
+      "question": "Ich will ___ Eis essen",
+      "answer": "Ich will ein Eis essen"
+    }
+  ]
+}
