@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import Button from "../Button";
 
 const GameContainer = styled.div`
   font-family: Arial, Helvetica, sans-serif;
@@ -79,6 +80,9 @@ export default class Flashcards extends Component {
     const { card, answerRevealed } = this.state;
     return (
       <GameContainer>
+        <p>
+          Card {this.state.cardIndex + 1}/{Cards.length}
+        </p>
         <Card>
           {!answerRevealed && (
             <Face>
@@ -93,9 +97,9 @@ export default class Flashcards extends Component {
           )}
         </Card>
 
-        <button onClick={this.previous.bind(this)}>Previous</button>
-        <button onClick={this.reveal.bind(this)}>Reveal Answer</button>
-        <button onClick={this.next.bind(this)}>Next</button>
+        <Button onClick={this.previous.bind(this)}>Previous</Button>
+        <Button onClick={this.reveal.bind(this)}>Reveal Answer</Button>
+        <Button onClick={this.next.bind(this)}>Next</Button>
       </GameContainer>
     );
   }
