@@ -41,7 +41,7 @@ export default class Flashcards extends Component {
       .then(response => response.json())
       .then(data =>
         this.setState({
-          cards: data,
+          cards: data.cards,
           loading: false
         })
       );
